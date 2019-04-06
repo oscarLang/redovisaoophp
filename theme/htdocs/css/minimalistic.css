@@ -5445,7 +5445,7 @@ body {
   font: 18px/1.33333333 'Oswald', sans-serif;
   margin: 0;
   padding: 0;
-  color: #e6e6e6;
+  color: #b9bdC0;
   background-color: #fff;
 }
 p {
@@ -5453,18 +5453,18 @@ p {
 }
 h1 {
   color: #000;
-  border-color: #b3b3b3;
+  border-color: #838a90;
 }
 h2 {
   color: #000;
-  border-color: #b3b3b3;
+  border-color: #838a90;
 }
 h3 {
   color: #000;
-  border-color: #b3b3b3;
+  border-color: #838a90;
 }
 h4 {
-  border-color: #b3b3b3;
+  border-color: #838a90;
 }
 img {
   max-width: 100%;
@@ -5499,7 +5499,7 @@ img {
   max-width: 100%;
 }
 .inner-wrap-main {
-  background-color: #e6e6e6;
+  background-color: #b9bdC0;
   border-radius: 4px;
 }
 .outer-wrap {
@@ -5533,7 +5533,7 @@ img {
  * Footer layout
 */
 .outer-wrap-footer {
-  background-color: #e6e6e6;
+  background-color: #b9bdC0;
 }
 .site-footer {
   display: inline;
@@ -5541,7 +5541,7 @@ img {
   width: 98.95833333%;
   margin-left: 0.52083333%;
   margin-right: 0.52083333%;
-  border-top: 2px solid #b3b3b3;
+  border-top: 2px solid #838a90;
 }
 .footer-column {
   display: inline;
@@ -5552,7 +5552,7 @@ img {
 }
 .footer-column-1,
 .footer-column-2 {
-  border-right: 2px solid #b3b3b3;
+  border-right: 2px solid #838a90;
 }
 @media screen and (max-width: 700px) {
   .footer-column {
@@ -5565,7 +5565,7 @@ img {
   .footer-column-1,
   .footer-column-2 {
     border-right: none;
-    border-bottom: 2px solid #b3b3b3;
+    border-bottom: 2px solid #838a90;
   }
 }
 /**
@@ -5576,7 +5576,7 @@ img {
 }
 .author-byline {
   display: flex;
-  border: 2px solid #b3b3b3;
+  border: 2px solid #838a90;
   font-size: 18px;
   color: #0d0d0d;
 }
@@ -5613,24 +5613,24 @@ img {
 }
 .toc {
   list-style: none;
-  border: 1px solid #b3b3b3;
+  border: 1px solid #838a90;
 }
 /* links and list */
 li {
   list-style: none;
 }
 a {
-  color: #ff8533;
+  color: #4F5D9B;
   text-decoration: none;
 }
 a:visited {
-  color: #ff8533;
+  color: #4F5D9B;
 }
 a:hover {
   text-decoration: underline;
 }
 code {
-  background-color: #e6e6e6;
+  background-color: #b9bdC0;
   border: none;
 }
 @font-face {
