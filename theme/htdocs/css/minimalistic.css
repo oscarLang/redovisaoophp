@@ -685,6 +685,154 @@ hr::after {
  * and other regions of the page including route specific styles.
  */
 /**
+ * Show off the regions used in the website, to ease styling.
+ */
+.regions .outer-wrap {
+  background-color: #f4e3c9;
+  border: 1px solid #e3b774;
+}
+.regions .inner-wrap {
+  background-color: #f4e0e9;
+  border: 1px solid #d995b4;
+}
+.regions .region-header-col-1,
+.regions .region-header-col-2,
+.regions .region-header-col-3,
+.regions .region-flash,
+.regions .region-breadcrumb,
+.regions .region-flash-message,
+.regions .region-columns-above,
+.regions .region-main,
+.regions .region-after-main,
+.regions .region-columns-below,
+.regions .region-sidebar-left,
+.regions .region-sidebar-right,
+.regions .region-footer,
+.regions .region-footer-column-1,
+.regions .region-footer-column-2,
+.regions .region-footer-column-3 {
+  background-color: #b5dce1;
+  border: 1px solid #6cbac4;
+  color: #111;
+  display: inline;
+}
+.region-main {
+  display: inline;
+  float: left;
+  width: 65.625%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+  margin-left: 17.1875%;
+}
+.region-main.has-sidebar-left,
+.region-main.has-sidebar-right {
+  display: inline;
+  float: left;
+  width: 65.625%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
+.region-main.has-sidebar-left.has-sidebar-right,
+.region-main.has-sidebar-right.has-sidebar-left {
+  display: inline;
+  float: left;
+  width: 48.95833333%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
+.region-sidebar-right,
+.region-sidebar-left {
+  display: inline;
+  float: left;
+  width: 32.29166667%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
+.region-sidebar-right.has-sidebar-left,
+.region-sidebar-left.has-sidebar-right {
+  display: inline;
+  float: left;
+  width: 23.95833333%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
+.region-breadcrumb {
+  display: inline;
+  float: left;
+  width: 98.95833333%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
+.region-header-col-1,
+.region-header-col-3 {
+  display: inline;
+  float: left;
+  width: 23.95833333%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
+.region-header-col-2 {
+  display: inline;
+  float: left;
+  width: 65.625%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
+.region-flash {
+  display: inline;
+  float: left;
+  width: 98.95833333%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
+/**
+responsive
+**/
+@media screen and (max-width: 850px) {
+  .region-main.has-sidebar-left,
+  .region-main.has-sidebar-right {
+    display: inline;
+    float: left;
+    width: 98.95833333%;
+    margin-left: 0.52083333%;
+    margin-right: 0.52083333%;
+  }
+  .region-main .right {
+    float: none;
+  }
+  .region-sidebar-right,
+  .region-sidebar-left {
+    display: inline;
+    float: left;
+    width: 98.95833333%;
+    margin-left: 0.52083333%;
+    margin-right: 0.52083333%;
+  }
+  .breadcrumb-list li {
+    display: inline;
+    float: left;
+    width: 94.79166667%;
+    margin-left: 0.52083333%;
+    margin-right: 0.52083333%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .region-main,
+  .region-sidebar-right.has-sidebar-left,
+  .region-sidebar-left.has-sidebar-right {
+    display: inline;
+    float: left;
+    width: 98.95833333%;
+    margin-left: 0.52083333%;
+    margin-right: 0.52083333%;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .site-logo {
+    display: none;
+  }
+}
+/**
  * Layout for responsive style through media queries.
  */
 @media screen and (max-width: 1500px) {
@@ -5284,11 +5432,32 @@ html {
   background-color: #424242;
 }
 body {
+  font: 18px/1.33333333 'Oswald', sans-serif;
   margin: 0;
   padding: 0;
   color: #e6e6e6;
   background-color: #fff;
-  font: 100.01%/1 'Oswald', sans-serif;
+}
+p {
+  color: #000;
+}
+h1 {
+  color: #000;
+  border-color: #b3b3b3;
+}
+h2 {
+  color: #000;
+  border-color: #b3b3b3;
+}
+h3 {
+  color: #000;
+  border-color: #b3b3b3;
+}
+h4 {
+  border-color: #b3b3b3;
+}
+img {
+  max-width: 100%;
 }
 .row {
   display: block;
