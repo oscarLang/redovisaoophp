@@ -1,3 +1,3 @@
-#### Footer col 1
+#### Om sidan
 
-Med brödtext i ett stycke som säger något trevligt om just detta block, eller kanske en lista av länkar.
+Den här sidan är skapad av mig Oscar Lang, som en del av kursen Objektorienterade webbteknologier, a.k.a. oophp.

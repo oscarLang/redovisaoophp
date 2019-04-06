@@ -1,3 +1,3 @@
 #### Kurs och kursrepo
 
-Skriv något kort om kursen och länka till [kursens hemsida på dbwebb.se](XXX) och till [kursens kursrepo på GitHub](XXX).
+Objektorienterade webbteknologier, a.k.a. oophp. Kursen finns på [dbwebb.se](https://dbwebb.se/kurser/oophp-v5) och kursens utveckling kan följas [på GitHub](https://github.com/dbwebb-se/oophp).

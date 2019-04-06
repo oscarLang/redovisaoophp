@@ -4,7 +4,7 @@ views:
         region: sidebar-right
         template: anax/v2/block/default
         data:
-            meta: 
+            meta:
                 type: single
                 route: block/om-kursrepo
 
@@ -12,17 +12,13 @@ views:
         region: sidebar-right
         template: anax/v2/block/default
         data:
-            meta: 
+            meta:
                 type: single
                 route: block/om-redovisa
 ---
 Om
 =========================
 
-Detta innehåll är skrivet i markdown och du hittar innehållet i filen `content/om.md`.
+Det här är min me-sida i kursen oophp. Kursen introducerar oss till objektorienterad programmering i PHP. Vi lär oss även att utveckla webbplatser med hjälp av ramverk samt teknikerna för att göra det.
 
-Skriv några kloka ord om kursen?
-
-Lägg till en fin och representativ bild för kursen, enligt ditt eget val.
-
-[FIGURE src=image/car.png?w=740&filter=grayscale&f1=colorize,0,30,0,0 caption="En fin bil som demobild, lite oklart hur den är representativ, men ändå..."]
+[FIGURE src=image/php.png?w=740 caption="En ElePHPant, den mest använda logan för språket PHP"]
