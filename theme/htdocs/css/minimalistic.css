@@ -835,9 +835,19 @@ responsive
 /**
  * Layout for responsive style through media queries.
  */
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 2000px) {
   .site-logo {
     display: none;
+  }
+}
+@media screen and (max-width: 1230px) {
+  .my-navbar a {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .my-navbar a {
+    font-size: 16px;
   }
 }
 /**
