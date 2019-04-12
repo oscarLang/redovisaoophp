@@ -15,7 +15,17 @@ if (isset($class)) {
     $classes[] = $class;
 }
 
-
 ?>
-<h1>Guess a number</h1>
-<p><?=$content?></p>
+<h1>Make a guess!</h1>
+<p>You have <?=$guess->tries()?> tries left!</p>
+<form method="post">
+    <input type="number" name="input">
+    <input type="submit" name="makeGuess" value="Make a guess">
+    <!-- <input type="inputstate" name="makeGuess" value="Make a guess"> -->
+</form>
+<form method="get" action="cheat">
+    <input type="submit" name="cheat" value="cheat">
+</form>
+<!-- <form action="redirect.php" method="post">
+    <input type="submit" name="reset" value="reset">
+</form> -->
