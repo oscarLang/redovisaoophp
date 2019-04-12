@@ -20,7 +20,7 @@ $app->router->get("guess/start", function () use ($app) {
     ];
 
     $app->page->add("guess/play", $data);
-    var_dump($_SESSION);
+    $app->page->add("guess/debug");
     return $app->page->render([
         "title" => $title,
     ]);
