@@ -7,6 +7,7 @@
 $app->router->get("guess/init", function () use ($app) {
     // TODO: init game
     $game = new Osln\Guess\Guess();
+    $_SESSION["game"] = $game;
     return $app->response->redirect("guess/start");
 });
 
@@ -19,7 +20,7 @@ $app->router->get("guess/start", function () use ($app) {
     ];
 
     $app->page->add("guess/play", $data);
-
+    var_dump($_SESSION);
     return $app->page->render([
         "title" => $title,
     ]);
