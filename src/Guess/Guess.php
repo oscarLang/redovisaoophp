@@ -9,7 +9,7 @@ class Guess
      * @var int $number   The current secret number.
      * @var int $tries    Number of tries a guess has been made.
      */
-    public $number;
+    private $number;
     private $tries;
 
 
