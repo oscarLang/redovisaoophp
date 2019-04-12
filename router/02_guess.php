@@ -6,6 +6,7 @@
 */
 $app->router->get("guess/init", function () use ($app) {
     // TODO: init game
+    $game = new Osln\Guess\Guess();
     return $app->response->redirect("guess/start");
 });
 
