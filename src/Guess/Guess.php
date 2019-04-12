@@ -1,5 +1,5 @@
 <?php
-namespace Osln\Guess
+namespace Osln\Guess;
 /**
  * Guess my number, a class supporting the game through GET, POST and SESSION.
  */

@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Osln\Guess;
 /**
  * Exception class for PersonAgeException.
  */
