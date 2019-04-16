@@ -57,7 +57,6 @@ $app->router->post("guess/start", function () use ($app) {
 });
 
 $app->router->post("guess/cheat", function () use ($app) {
-    $guess = $_SESSION["guess"];
     if(isset($_POST["cheat"])) {
         $_SESSION["cheat"] = true;
     }
@@ -65,9 +64,8 @@ $app->router->post("guess/cheat", function () use ($app) {
 });
 
 $app->router->post("guess/reset", function () use ($app) {
-    $guess = $_SESSION["guess"];
     if(isset($_POST["reset"])) {
         $_SESSION["reset"] = true;
     }
-    $app->response->redirect("guess/start");
+    $app->response->redirect("guess/init");
 });
