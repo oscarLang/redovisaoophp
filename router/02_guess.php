@@ -48,9 +48,11 @@ $app->router->post("guess/start", function () use ($app) {
 });
 
 $app->router->get("guess/cheat", function () use ($app) {
+    $guess = $_SESSION["guess"];
     $data = [
-        "number" => 2
+        "number" => $guess->number()
     ];
+    var_dump($data);
     $app->page->add("guess/cheat", $data);
     return $app->response->redirect("guess/start");
 });
