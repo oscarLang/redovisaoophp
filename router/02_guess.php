@@ -22,12 +22,12 @@ $app->router->get("guess/start", function () use ($app) {
         "inputstate" => $_SESSION["inputstate"]
     ];
     $app->page->add("guess/play", $data);
-    if(isset($_SESSION["status"])) {
+    if (isset($_SESSION["status"])) {
         $data["status"] = $_SESSION["status"];
         $app->page->add("guess/status", $data);
     }
-    if(isset($_SESSION["cheat"])) {
-        if($_SESSION["cheat"]) {
+    if (isset($_SESSION["cheat"])) {
+        if ($_SESSION["cheat"]) {
             $app->page->add("guess/cheat", $data);
         }
     }
@@ -57,14 +57,14 @@ $app->router->post("guess/start", function () use ($app) {
 });
 
 $app->router->post("guess/cheat", function () use ($app) {
-    if(isset($_POST["cheat"])) {
+    if (isset($_POST["cheat"])) {
         $_SESSION["cheat"] = true;
     }
     $app->response->redirect("guess/start");
 });
 
 $app->router->post("guess/reset", function () use ($app) {
-    if(isset($_POST["reset"])) {
+    if (isset($_POST["reset"])) {
         $_SESSION["reset"] = true;
     }
     $app->response->redirect("guess/init");
