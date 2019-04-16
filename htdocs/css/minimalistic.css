@@ -5435,8 +5435,8 @@ a.rm-button.rm-clicked .rm-button-face-2 {
  * My own settings, not currently in their own module.
  */
 /**
- * Base style to affect HTML elements on a general scale.
- */
+* Base style to affect HTML elements on a general scale.
+*/
 html {
   overflow-y: scroll;
   background-color: #424242;
@@ -5467,6 +5467,9 @@ h4 {
   border-color: #838a90;
 }
 pre {
+  color: #000;
+}
+code {
   color: #000;
 }
 img {
