@@ -1,6 +1,8 @@
 <?php
 
 namespace Anax\View;
+// echo showEnvironment(get_defined_vars(), get_defined_functions());
+
 
 ?>
-<h4>Current number is <?=$number?></h4>
+<p>Current number is <?=$guess->number()?></p>

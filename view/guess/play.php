@@ -20,12 +20,12 @@ if (isset($class)) {
 <p>You have <?=$guess->tries()?> tries left!</p>
 <form method="post">
     <input type="number" name="input">
-    <input type="submit" name="makeGuess" value="Make a guess">
-    <!-- <input type="inputstate" name="makeGuess" value="Make a guess"> -->
+    <!-- <input type="submit" name="makeGuess" value="Make a guess"> -->
+    <input type=<?=$inputstate?> name="makeGuess" value="Make a guess">
 </form>
-<form method="get" action="cheat">
+<form method="post" action="cheat">
     <input type="submit" name="cheat" value="cheat">
 </form>
-<!-- <form action="redirect.php" method="post">
+<form action="reset" method="post">
     <input type="submit" name="reset" value="reset">
-</form> -->
+</form>
