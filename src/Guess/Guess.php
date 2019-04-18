@@ -8,10 +8,12 @@ class Guess
 {
     /**
      * @var int $number The current secret number.
-     *
-     * @var int $tries Number of tries a guess has been made.
      */
     private $number;
+
+    /**
+     * @var int $tries Number of tries a guess has been made.
+     */
     private $tries;
 
 
