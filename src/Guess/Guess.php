@@ -7,8 +7,9 @@ namespace Osln\Guess;
 class Guess
 {
     /**
-     * @var int $number   The current secret number.
-     * @var int $tries    Number of tries a guess has been made.
+     * @var int $number The current secret number.
+     *
+     * @var int $tries Number of tries a guess has been made.
      */
     private $number;
     private $tries;
@@ -69,6 +70,7 @@ class Guess
     /**
      * Make a guess, decrease remaining guesses and return a string stating
      * if the guess was correct, too low or to high or if no guesses remains.
+     * @param int $number The number that the player guesses
      *
      * @throws GuessException when guessed number is out of bounds.
      *

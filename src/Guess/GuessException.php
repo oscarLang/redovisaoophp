@@ -2,7 +2,7 @@
 namespace Osln\Guess;
 
 /**
- * Exception class for PersonAgeException.
+ * Exception class for GuessException.
  */
 class GuessException extends Exception
 {
