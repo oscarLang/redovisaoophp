@@ -1,5 +1,6 @@
 <?php
 
+use Exception;
 
 /**
  * Exception class for PersonAgeException.

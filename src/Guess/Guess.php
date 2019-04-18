@@ -85,6 +85,7 @@ class Guess
         if ($this->tries > 0) {
             if ($number > 100 || $number < 1) {
                 $state = "Error";
+                return $state;
                 throw new GuessException("Number is only allowed to be positive");
             } else if ($number == $this->number) {
                 $state .= "correct. You won!";
