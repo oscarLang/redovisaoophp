@@ -15,10 +15,10 @@ if (isset($class)) {
 }
 
 ?>
-<h1>Make a guess!</h1>
-<p>You have <?=$guess->tries()?> tries left!</p>
+<h1>Dice100!</h1>
+<p><?=$game->play()?></p>
 <form method="post">
-    <?php if($player == "Player") :  ?>
+    <?php if($game->getNextAsString() == "Player") :  ?>
         <input type="submit" name="playerRoll" value="Roll dice">
         <input type="submit" name="playerSave" value="Stay & save">
     <?php else : ?>
