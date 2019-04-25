@@ -6,9 +6,9 @@ namespace Osln\Dice;
  */
 class Player
 {
-    private $name;
-    private $currentScore;
-    private $roundScore;
+    protected $name;
+    protected $currentScore;
+    protected $roundScore;
 
     public function __construct(string $name)
     {
