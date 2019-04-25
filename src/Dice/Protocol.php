@@ -9,14 +9,14 @@ class Protocol
 {
     private $player;
     private $bot;
-    private $next;
+    private $current;
 
 
     public function __construct()
     {
         $this->player = new Player("Player");
         $this->bot = new Player("Bot");
-        $this->next = "Player";
+        $this->current = "Player";
         echo "construct";
     }
 
@@ -28,51 +28,60 @@ class Protocol
             $faceOfBot = $this->bot->playRound();
             if ($faceOfPlayer > $faceOfBot) {
                 $winner = true;
-                $this->next = "Player";
+                $this->current = "Player";
                 return "player starts";
             } elseif ($faceOfBot > $faceOfPlayer) {
                 $winner = true;
-                $this->next = "Bot";
+                $this->current = "Bot";
                 return "bot starts";
             }
         }
     }
 
-    private function whoIsNext()
+    private function whoIsCurrent()
     {
-        var_dump($this->next);
-        if($this->next == $this->player->getName()) {
+        // var_dump($this->current);
+        if($this->current == $this->player->getName()) {
             return $this->player;
-        } elseif ($this->next == $this->bot->getName()) {
+        } elseif ($this->current == $this->bot->getName()) {
             return $this->bot;
         }
     }
 
-    public function getNextAsString() : string
+    public function getCurrentAsString() : string
     {
-        return $this->next;
+        return $this->current;
     }
 
     private function swap()
     {
-        if ($this->next == "Player") {
-            $this->next = "Bot";
+        if ($this->current == "Player") {
+            $this->current = "Bot";
         } else {
-            $this->next = "Player";
+            $this->current = "Player";
         }
     }
 
     public function play()
     {
-        $nextPlayer = $this->whoIsNext();
-        // var_dump($nextPlayer);
-        if (!$nextPlayer->playRound()) {
-            $status = $this->player->getName() . " rolled 1. Swapping players";
+        $currentPlayer = $this->whoIscurrent();
+        $faces = $currentPlayer->playRound();
+        if (in_array(1, $faces)) {
+            $status = $this->player->getName() . " rolled a 1. Swapping players";
             $this->swap();
-            return $status;
-        } else {
-            return $this->player->getName() . " rolled " . $this->player->getRoundScore();
+            array_push($faces, $status);
         }
+        return $faces;
+    }
+
+    public function save()
+    {
+        if($this->current == "Player") {
+            $this->player->stay();
+        } else {
+            $this->bot->stay();
+        }
+        $this->swap();
     }
 
 }

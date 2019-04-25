@@ -13,12 +13,20 @@ $classes[] = "article";
 if (isset($class)) {
     $classes[] = $class;
 }
-
+$faces = $game->play();
+$i = 1;
 ?>
 <h1>Dice100!</h1>
-<p><?=$game->play()?></p>
-<form method="post">
-    <?php if($game->getNextAsString() == "Player") :  ?>
+<h2>current player: <?=$game->getCurrentAsString()?></h2>
+<?php foreach ($faces as $face) : ?>
+    <?php if($i == 6): ?>
+        <p><?=$face?> </p>
+    <?php else: ?>
+        <p>dice<?=$i++?> : <?=$face?> </p>
+    <?php endif; ?>
+<?php endforeach; ?>
+<form method="post" action="form-input">
+    <?php if($game->getCurrentAsString() == "Player") :  ?>
         <input type="submit" name="playerRoll" value="Roll dice">
         <input type="submit" name="playerSave" value="Stay & save">
     <?php else : ?>

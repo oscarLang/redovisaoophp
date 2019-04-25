@@ -17,7 +17,7 @@ class Player
         $this->roundScore = 0;
     }
 
-    public function playRound() : string
+    public function playRound()
     {
         $dices = new DiceHand();
         $dices->roll();
@@ -25,18 +25,18 @@ class Player
         foreach ($faces as $face) {
             if ($face == 1) {
                 $this->roundScore = 0;
-                return false;
+                return $faces;
             }
         }
         $this->roundScore += $dices->sum();
-        return true;
+        return $faces;
     }
 
     public function stay()
     {
         $this->currentScore += $this->roundScore;
         $this->roundScore = 0;
-        return $this->$currentScore;
+        return $this->currentScore;
     }
 
     public function getTotalScore()

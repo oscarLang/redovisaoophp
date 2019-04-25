@@ -24,3 +24,13 @@ $app->router->get("dice/start", function () use ($app) {
         "title" => $title,
     ]);
 });
+
+$app->router->post("dice/form-input", function() use ($app) {
+    $game = $app->session->get("game");
+    if($app->request->getPost("playerRoll")) {
+        $app->response->redirect("dice/start");
+    } elseif($app->request->getPost("playerSave")) {
+        $game->save();
+        return $app->response->redirect("dice/start");
+    }
+});
