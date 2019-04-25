@@ -48,7 +48,7 @@ class Protocol
         }
     }
 
-    private function getNextAsString() : string
+    public function getNextAsString() : string
     {
         return $this->next;
     }
