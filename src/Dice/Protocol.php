@@ -10,22 +10,21 @@ class Protocol
     private $player;
     private $bot;
     private $current;
-
+    private $latestRoll;
 
     public function __construct()
     {
         $this->player = new Player("Player");
-        $this->bot = new Player("Bot");
+        $this->bot = new Bot("Bot");
         $this->current = "Player";
-        echo "construct";
     }
 
     public function chooseStarter()
     {
         $winner = false;
         while(!$winner) {
-            $faceOfPlayer = $this->player->playRound();
-            $faceOfBot = $this->bot->playRound();
+            $faceOfPlayer = array_sum($this->player->playRound());
+            $faceOfBot = array_sum($this->bot->playRound());
             if ($faceOfPlayer > $faceOfBot) {
                 $winner = true;
                 $this->current = "Player";
@@ -53,13 +52,14 @@ class Protocol
         return $this->current;
     }
 
-    private function swap()
+    private function swap(string $from)
     {
-        if ($this->current == "Player") {
+        if ($from == $this->player->getName()) {
             $this->current = "Bot";
-        } else {
+        } elseif($from == $this->bot->getName()) {
             $this->current = "Player";
         }
+        return $this->current;
     }
 
     public function play()
@@ -67,21 +67,35 @@ class Protocol
         $currentPlayer = $this->whoIscurrent();
         $faces = $currentPlayer->playRound();
         if (in_array(1, $faces)) {
-            $status = $this->player->getName() . " rolled a 1. Swapping players";
-            $this->swap();
+            $status = $currentPlayer->getName() . " rolled a 1. Swapping players";
+            $this->swap($currentPlayer->getName());
             array_push($faces, $status);
         }
+        echo "TEST";
+        if (($currentPlayer->getRoundScore() > 30) and ($currentPlayer->getName() == "Bot")) {
+            $status = "Bot rolled" . $currentPlayer->getRoundScore() . " and decided to stay";
+            array_push($faces, $status);
+            $this->save("Bot");
+            // $this->swap($currentPlayer->getName());
+        }
+        $this->latestRoll = $faces;
         return $faces;
     }
 
-    public function save()
+    public function save(string $toSave)
     {
-        if($this->current == "Player") {
+        if($toSave == $this->player->getName()) {
             $this->player->stay();
-        } else {
+            $this->swap("Player");
+        } elseif($toSave == $this->bot->getName()) {
             $this->bot->stay();
+            $this->swap("Bot");
         }
-        $this->swap();
+    }
+
+    public function getLatestRolls()
+    {
+        return $this->latestRoll;
     }
 
 }

@@ -28,9 +28,14 @@ $app->router->get("dice/start", function () use ($app) {
 $app->router->post("dice/form-input", function() use ($app) {
     $game = $app->session->get("game");
     if($app->request->getPost("playerRoll")) {
-        $app->response->redirect("dice/start");
+        $game->play();
     } elseif($app->request->getPost("playerSave")) {
-        $game->save();
-        return $app->response->redirect("dice/start");
+        $game->save("Player");
+    } elseif($app->request->getPost("botRoll")) {
+        $game->play();
+    } else {
+        echo "Error";
     }
+    $app->session->set("game", $game);
+    return $app->response->redirect("dice/start");
 });

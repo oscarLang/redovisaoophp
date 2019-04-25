@@ -6,10 +6,10 @@ namespace Osln\Dice;
  */
 class Bot extends Player
 {
+
     public function __construct(string $name)
     {
         parent::__construct($name);
-        var_dump($this);
     }
 
     public function playRound()
@@ -26,7 +26,6 @@ class Bot extends Player
                 break;
             }
             if ($this->roundScore > 30) {
-                $this->stay();
                 break;
             }
         }
