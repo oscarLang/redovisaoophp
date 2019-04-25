@@ -32,7 +32,7 @@ class Dice
      */
     public function __destruct()
     {
-        echo __METHOD__;
+        // echo __METHOD__;
     }
 
     public function roll()
