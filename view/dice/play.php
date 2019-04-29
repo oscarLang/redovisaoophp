@@ -22,6 +22,9 @@ $i = 1;
 <h1>Dice100!</h1>
 <?php if($winner) : ?>
     <h2><?=$winner?> won!</h2>
+    <form method="post" action="reset">
+        <input type="submit" name="reset" value="Reset">
+    </form>
 <?php else: ?>
     <h2>current player: <?=$current?></h2>
     <p>

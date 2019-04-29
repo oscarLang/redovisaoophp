@@ -11,14 +11,12 @@ class Protocol
     private $bot;
     private $current;
     private $latestRoll;
-    private $winner;
 
     public function __construct()
     {
         $this->player = new Player("Player");
         $this->bot = new Bot("Bot");
         $this->current = "Player";
-        $this->winner = null;
     }
 
     public function chooseStarter()
@@ -41,7 +39,6 @@ class Protocol
 
     private function whoIsCurrent()
     {
-        // var_dump($this->current);
         if($this->current == $this->player->getName()) {
             return $this->player;
         } elseif ($this->current == $this->bot->getName()) {
@@ -79,9 +76,6 @@ class Protocol
             $this->save("Bot");
             // $this->swap($currentPlayer->getName());
         }
-        if ($this->$currentPlayer->getTotalScore() >= 100) {
-            $this->winner = $currentPlayer->getName();
-        }
         $this->latestRoll = $faces;
         return $faces;
     }
@@ -115,7 +109,15 @@ class Protocol
 
     public function hasWinner()
     {
-        return $this->winner;
+        $botScore = $this->bot->getTotalScore();
+        $playerScore = $this->player->getTotalScore();
+        if ($botScore >= 100 || $playerScore >= 100) {
+            if ($botScore > $playerScore) {
+                return "Bot";
+            }
+            return "Player";
+        }
+        return null;
     }
 
 }
