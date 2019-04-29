@@ -33,7 +33,7 @@ $i = 1;
             <?php endif; ?>
     <?php endforeach; ?>
     </p>
-    <b>Scores</b>
+    <b>Scores:</b>
     <?php foreach ($scores as $key => $value) : ?>
         <p>
             <?=$key?> : <?=$value?>
