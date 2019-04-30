@@ -49,6 +49,11 @@ return [
             "title" => "Gissa mitt nummer.",
         ],
         [
+            "text" => "Dice",
+            "url" => "dice",
+            "title" => "Dice100.",
+        ],
+        [
             "text" => "Docs",
             "url" => "dokumentation",
             "title" => "Dokumentation av ramverk och liknande.",
