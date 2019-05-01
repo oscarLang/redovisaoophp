@@ -12,11 +12,11 @@ class Protocol
     private $current;
     private $latestRoll;
 
-    public function __construct()
+    public function __construct($starter="Player")
     {
         $this->player = new Player("Player");
         $this->bot = new Bot("Bot");
-        $this->current = "Player";
+        $this->current = $starter;
     }
 
     public function chooseStarter()
@@ -35,6 +35,7 @@ class Protocol
                 return "bot starts";
             }
         }
+        return "Error";
     }
 
     private function whoIsCurrent()
@@ -44,6 +45,7 @@ class Protocol
         } elseif ($this->current == $this->bot->getName()) {
             return $this->bot;
         }
+        return null;
     }
 
     public function getCurrentAsString() : string
@@ -65,11 +67,7 @@ class Protocol
     {
         $currentPlayer = $this->whoIscurrent();
         $faces = $currentPlayer->playRound();
-        if (in_array(1, $faces)) {
-            $status = $currentPlayer->getName() . " rolled a 1. Swapping players";
-            $this->swap($currentPlayer->getName());
-            array_push($faces, $status);
-        }
+        $faces = $this->checkForOne($faces, $currentPlayer->getName());
         if (($currentPlayer->getRoundScore() > 30) and ($currentPlayer->getName() == "Bot")) {
             $status = "Bot rolled " . $currentPlayer->getRoundScore() . " and decided to stay";
             array_push($faces, $status);
@@ -80,15 +78,26 @@ class Protocol
         return $faces;
     }
 
+    private function checkForOne($faces, $name)
+    {
+        if (in_array(1, $faces)) {
+            $status = $name . " rolled a 1. Swapping players";
+            $this->swap($name);
+            array_push($faces, $status);
+        }
+        return $faces;
+    }
+
     public function save(string $toSave)
     {
         if($toSave == $this->player->getName()) {
             $this->player->stay();
-            $this->swap("Player");
+            return $this->swap("Player");
         } elseif($toSave == $this->bot->getName()) {
             $this->bot->stay();
-            $this->swap("Bot");
+            return $this->swap("Bot");
         }
+        return null;
     }
 
     public function getLatestRolls()
@@ -103,7 +112,7 @@ class Protocol
             'PlayerScore' => $this->player->getTotalScore(),
             'BotRoundScore' => $this->bot->getRoundScore(),
             'BotScore' => $this->bot->getTotalScore()
-        );;
+        );
         return $scores;
     }
 
