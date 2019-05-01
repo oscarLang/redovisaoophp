@@ -26,21 +26,20 @@ class Dice
             $this->face = $face;
         }
     }
-
     /**
-     * Destroy a Dice.
+     * roll the dice.
+     *
+     * @return int The face of the dice after a roll.
      */
-    public function __destruct()
-    {
-        // echo __METHOD__;
-    }
-
     public function roll()
     {
         $this->face = rand(1, self::SIDES);
         return $this->face;
     }
 
+    /**
+     * @return int The face of the dice.
+     */
     public function get_last_roll()
     {
         return $this->face;
