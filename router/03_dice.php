@@ -24,13 +24,13 @@ $app->router->get("dice/start", function () use ($app) {
     ]);
 });
 
-$app->router->post("dice/form-input", function() use ($app) {
+$app->router->post("dice/form-input", function () use ($app) {
     $game = $app->session->get("game");
-    if($app->request->getPost("playerRoll")) {
+    if ($app->request->getPost("playerRoll")) {
         $game->play();
-    } elseif($app->request->getPost("playerSave")) {
+    } elseif ($app->request->getPost("playerSave")) {
         $game->save("Player");
-    } elseif($app->request->getPost("botRoll")) {
+    } elseif ($app->request->getPost("botRoll")) {
         $game->play();
     } else {
         echo "Error";
@@ -38,8 +38,8 @@ $app->router->post("dice/form-input", function() use ($app) {
     $app->session->set("game", $game);
     return $app->response->redirect("dice/start");
 });
-$app->router->post("dice/reset", function() use ($app) {
-    if($app->request->getPost("reset")) {
+$app->router->post("dice/reset", function () use ($app) {
+    if ($app->request->getPost("reset")) {
         $app->response->redirect("dice/init");
     }
 });

@@ -12,7 +12,7 @@ class Protocol
     private $current;
     private $latestRoll;
 
-    public function __construct($starter="Player")
+    public function __construct($starter = "Player")
     {
         $this->player = new Player("Player");
         $this->bot = new Bot("Bot");
@@ -22,7 +22,7 @@ class Protocol
     public function chooseStarter()
     {
         $winner = false;
-        while(!$winner) {
+        while (!$winner) {
             $faceOfPlayer = array_sum($this->player->playRound());
             $faceOfBot = array_sum($this->bot->playRound());
             if ($faceOfPlayer > $faceOfBot) {
@@ -40,7 +40,7 @@ class Protocol
 
     private function whoIsCurrent()
     {
-        if($this->current == $this->player->getName()) {
+        if ($this->current == $this->player->getName()) {
             return $this->player;
         } elseif ($this->current == $this->bot->getName()) {
             return $this->bot;
@@ -57,7 +57,7 @@ class Protocol
     {
         if ($from == $this->player->getName()) {
             $this->current = "Bot";
-        } elseif($from == $this->bot->getName()) {
+        } elseif ($from == $this->bot->getName()) {
             $this->current = "Player";
         }
         return $this->current;
@@ -90,10 +90,10 @@ class Protocol
 
     public function save(string $toSave)
     {
-        if($toSave == $this->player->getName()) {
+        if ($toSave == $this->player->getName()) {
             $this->player->stay();
             return $this->swap("Player");
-        } elseif($toSave == $this->bot->getName()) {
+        } elseif ($toSave == $this->bot->getName()) {
             $this->bot->stay();
             return $this->swap("Bot");
         }
@@ -128,5 +128,4 @@ class Protocol
         }
         return null;
     }
-
 }

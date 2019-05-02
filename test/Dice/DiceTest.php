@@ -19,7 +19,6 @@ class DiceTest extends TestCase
         $this->assertInstanceOf("\Osln\Dice\Dice", $dice);
 
         $res = $dice->get_last_roll();
-        $exp = 6;
         $this->assertGreaterThan(0, $res);
         $this->assertLessThan(7, $res);
     }
@@ -43,7 +42,7 @@ class DiceTest extends TestCase
     public function testDiceRoll()
     {
         $dice = new Dice(3);
-        for ($i=0; $i < 100 ; $i++) {
+        for ($i=0; $i < 100; $i++) {
             $res = $dice->roll();
             $this->assertGreaterThan(0, $res);
             $this->assertLessThan(7, $res);

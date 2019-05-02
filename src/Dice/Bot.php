@@ -16,7 +16,7 @@ class Bot extends Player
     {
         $dices = new DiceHand();
         $faces = [];
-        while(true) {
+        while (true) {
             $dices->roll();
             $faces = $dices->values();
             if (!in_array(1, $faces)) {

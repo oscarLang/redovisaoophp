@@ -40,7 +40,7 @@ class Dice
     /**
      * @return int The face of the dice.
      */
-    public function get_last_roll()
+    public function getLastRoll()
     {
         return $this->face;
     }

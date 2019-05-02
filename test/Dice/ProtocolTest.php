@@ -48,7 +48,6 @@ class ProtocolTest extends TestCase
             $this->assertEquals("Bot", $prot->getCurrentAsString());
         } else {
             $this->assertEquals("Player", $prot->getCurrentAsString());
-
         }
     }
 
@@ -67,6 +66,4 @@ class ProtocolTest extends TestCase
             $this->assertEquals("Bot", $prot->hasWinner());
         }
     }
-
-
 }

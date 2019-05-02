@@ -10,7 +10,7 @@ class Player
     protected $currentScore;
     protected $roundScore;
 
-    public function __construct(string $name=null)
+    public function __construct(string $name = null)
     {
         $this->name = $name;
         $this->currentScore = 0;

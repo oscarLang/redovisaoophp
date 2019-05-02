@@ -20,18 +20,18 @@ $winner = $game->hasWinner();
 $i = 1;
 ?>
 <h1>Dice100!</h1>
-<?php if($winner) : ?>
+<?php if ($winner) : ?>
     <h2><?=$winner?> won!</h2>
     <form method="post" action="reset">
         <input type="submit" name="reset" value="Reset">
     </form>
-<?php else: ?>
+<?php else : ?>
     <h2>current player: <?=$current?></h2>
     <p>
     <?php foreach ($faces as $face) : ?>
-            <?php if($i == 6): ?>
+            <?php if ($i == 6) : ?>
                 <br><?=$face?>
-            <?php else: ?>
+            <?php else : ?>
                 Dice<?=$i++?> : <?=$face?>,
             <?php endif; ?>
     <?php endforeach; ?>

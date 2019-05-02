@@ -7,7 +7,7 @@ namespace Osln\Dice;
 class DiceHand
 {
     /**
-     * @var Dice $dices   Array consisting of dices.
+     * @var dices $dices   Array consisting of dices.
      * @var int  $values  Array consisting of last roll of the dices.
      */
     private $dices;
@@ -18,12 +18,12 @@ class DiceHand
      *
      * @param int $dices Number of dices to create, defaults to five.
      */
-    public function __construct(int $dices = 5)
+    public function __construct(int $nrOf = 5)
     {
         $this->dices  = [];
         $this->values = [];
 
-        for ($i = 0; $i < $dices; $i++) {
+        for ($i = 0; $i < $nrOf; $i++) {
             $this->dices[]  = new Dice();
             $this->values[] = null;
         }
