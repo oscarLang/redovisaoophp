@@ -18,7 +18,7 @@ class DiceTest extends TestCase
         $dice = new Dice();
         $this->assertInstanceOf("\Osln\Dice\Dice", $dice);
 
-        $res = $dice->get_last_roll();
+        $res = $dice->getLastRoll();
         $this->assertGreaterThan(0, $res);
         $this->assertLessThan(7, $res);
     }
@@ -31,7 +31,7 @@ class DiceTest extends TestCase
         $dice = new Dice(3);
         $this->assertInstanceOf("\Osln\Dice\Dice", $dice);
 
-        $res = $dice->get_last_roll();
+        $res = $dice->getLastRoll();
         $exp = 3;
         $this->assertEquals($exp, $res);
     }

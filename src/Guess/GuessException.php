@@ -4,7 +4,7 @@ namespace Osln\Guess;
 /**
  * Exception class for GuessException.
  */
-class GuessException extends Exception
+class GuessException extends \Exception
 {
     public function __construct($message, $code = 0, Exception $previous = null)
     {
